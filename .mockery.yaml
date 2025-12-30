@@ -51,3 +51,67 @@ packages:
       all: true
       with-expecter: true
       dir: 'runs/repository/mocks'
+
+  # flyteplugins
+  github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/core:
+    config:
+      all: true
+      case: underscore
+      dir: 'flyteplugins/go/tasks/pluginmachinery/core/mocks'
+  github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/workqueue:
+    config:
+      all: true
+      case: underscore
+      dir: 'flyteplugins/go/tasks/pluginmachinery/workqueue/mocks'
+  github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/k8s:
+    config:
+      all: true
+      case: underscore
+      dir: 'flyteplugins/go/tasks/pluginmachinery/k8s/mocks'
+  github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/catalog:
+    config:
+      all: true
+      case: underscore
+      dir: 'flyteplugins/go/tasks/pluginmachinery/catalog/mocks'
+  github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/io:
+    config:
+      all: true
+      case: underscore
+      dir: 'flyteplugins/go/tasks/pluginmachinery/io/mocks'
+
+  # flytestdlib
+  github.com/flyteorg/flyte/v2/flytestdlib/cache:
+    config:
+      all: true
+      with-expecter: true
+      dir: 'flytestdlib/cache/mocks'
+  github.com/flyteorg/flyte/v2/flytestdlib/utils:
+    config:
+      all: true
+      case: underscore
+      with-expecter: true
+      dir: 'flytestdlib/utils/mocks'
+  github.com/flyteorg/flyte/v2/flytestdlib/storage:
+    config:
+      all: false
+      case: underscore
+      with-expecter: true
+      dir: 'flytestdlib/storage/mocks'
+    interfaces:
+      RawStore:
+      ReferenceConstructor:
+      ComposedProtobufStore:
+  github.com/flyteorg/flyte/v2/flytestdlib/fastcheck:
+    config:
+      all: false
+      case: underscore
+      with-expecter: true
+      dir: 'flytestdlib/fastcheck/mocks'
+    interfaces:
+      Filter:
+  github.com/flyteorg/flyte/v2/flytestdlib/random:
+    config:
+      all: true
+      case: underscore
+      with-expecter: true
+      dir: 'flytestdlib/random/mocks'
