@@ -4,6 +4,9 @@ disable-version-string: True
 issue-845-fix: True
 structname: ""
 mockname: "{{.InterfaceName}}"
+filename: "{{.InterfaceName | snakecase}}.go"
+inpackage: false
+outpkg: "mocks"
 packages:
   github.com/flyteorg/flyte/v2/gen/go/flyteidl2/app:
     config:
@@ -56,27 +59,22 @@ packages:
   github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/core:
     config:
       all: true
-      case: underscore
       dir: 'flyteplugins/go/tasks/pluginmachinery/core/mocks'
   github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/workqueue:
     config:
       all: true
-      case: underscore
       dir: 'flyteplugins/go/tasks/pluginmachinery/workqueue/mocks'
   github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/k8s:
     config:
       all: true
-      case: underscore
       dir: 'flyteplugins/go/tasks/pluginmachinery/k8s/mocks'
   github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/catalog:
     config:
       all: true
-      case: underscore
       dir: 'flyteplugins/go/tasks/pluginmachinery/catalog/mocks'
   github.com/flyteorg/flyte/v2/flyteplugins/go/tasks/pluginmachinery/io:
     config:
       all: true
-      case: underscore
       dir: 'flyteplugins/go/tasks/pluginmachinery/io/mocks'
 
   # flytestdlib
@@ -88,13 +86,11 @@ packages:
   github.com/flyteorg/flyte/v2/flytestdlib/utils:
     config:
       all: true
-      case: underscore
       with-expecter: true
       dir: 'flytestdlib/utils/mocks'
   github.com/flyteorg/flyte/v2/flytestdlib/storage:
     config:
       all: false
-      case: underscore
       with-expecter: true
       dir: 'flytestdlib/storage/mocks'
     interfaces:
@@ -104,7 +100,6 @@ packages:
   github.com/flyteorg/flyte/v2/flytestdlib/fastcheck:
     config:
       all: false
-      case: underscore
       with-expecter: true
       dir: 'flytestdlib/fastcheck/mocks'
     interfaces:
@@ -112,6 +107,5 @@ packages:
   github.com/flyteorg/flyte/v2/flytestdlib/random:
     config:
       all: true
-      case: underscore
       with-expecter: true
       dir: 'flytestdlib/random/mocks'
